@@ -14,6 +14,7 @@ const { NotImplementedError } = require("../extensions/index.js");
 function getCommonCharacterCount(s1, s2) {
   const str1 = s1.split("");
   const str2 = s2.split("");
+
   return str1.filter((char) => {
     const index = str2.indexOf(char);
     if (index !== -1) {

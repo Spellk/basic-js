@@ -1,4 +1,4 @@
-const { NotImplementedError } = require('../extensions/index.js');
+const { NotImplementedError } = require("../extensions/index.js");
 
 /**
  * Given some integer, find the maximal number you can obtain
@@ -11,11 +11,18 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For n = 152, the output should be 52
  *
  */
-function deleteDigit(/* n */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function deleteDigit(n) {
+  const digits = n.toString().split("");
+  const result = [];
+
+  for (let i = 0; i < digits.length; i++) {
+    const tempDigits = digits.slice();
+    tempDigits.splice(i, 1);
+    result.push(parseInt(tempDigits.join("")));
+  }
+  return Math.max.apply(null, result);
 }
 
 module.exports = {
-  deleteDigit
+  deleteDigit,
 };
